@@ -1,0 +1,72 @@
+.round-middle
+{
+  border-radius: 5px;
+}
+
+.header
+{
+  padding-left: 10%;
+  padding-right: 10%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg,  0%, rgb(133 195 143) 35%, rgba(0,212,255,1) 100%)
+}
+
+.header > h2
+{
+  color: #343434;
+  width: 40%;
+}
+
+.row
+{
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+
+  border-top: 1px solid rgb(207, 207, 207);
+
+  height: 75px;
+}
+
+.row > div
+{
+  width: 33%;
+}
+
+.row > div > p
+{
+  text-align: center;
+}
+
+.wordsTable {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
+}
+
+.wordsColumn {
+  min-width: 25%;
+}
+
+.tableHeader {
+  position: sticky;
+  top: 0;
+  background-color: #1e1e1e;
+}
+
+h4 {
+  color: white;
+  text-align: center;
+}
+
+.center {
+  width: 100%;
+}

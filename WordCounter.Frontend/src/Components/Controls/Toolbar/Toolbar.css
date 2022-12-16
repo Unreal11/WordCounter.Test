@@ -1,0 +1,28 @@
+.toolbar 
+{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    align-content: space-around;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.full
+{
+    width: 100%;
+}
+
+.medium
+{
+    width: 65%;
+}
+
+.column
+{
+    margin: 5px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
