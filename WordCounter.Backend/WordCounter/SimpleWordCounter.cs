@@ -25,8 +25,6 @@ public class SimpleWordCounter : IWordCounter
 
     public async Task<List<WordGroupContainer>> CountWordsAsync(string text)
     {
-        await Task.CompletedTask;
-
         var groupContainers = Settings.WordCountGroups
             .Select(x => new GroupContainer(x, new Dictionary<string, int>()))
             .ToList();
