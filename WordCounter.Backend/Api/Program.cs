@@ -1,4 +1,5 @@
 using Api;
+using Api.Data;
 using Api.Models;
 using Api.Serivces;
 using TextProcessor.Core;
@@ -30,26 +31,7 @@ app.MapPost("/api/CountWordGroups", async (RequestModel model) =>
 
         counter.Settings.Exceptions = model.RemoveGrammars == false
             ? Array.Empty<string>()
-            : new[]
-            {
-                "a",
-                "an",
-                "at",
-                "the",
-                "and",
-                "to",
-                "in",
-                "with",
-                "for",
-                "from",
-                "here",
-
-                "и",
-                "в",
-                "над",
-                "от",
-                "для"
-            };
+            : Grammars.Default;
         
         processor.Pipeline = TextProcessingPipelineBuilder.Create(scope.ServiceProvider)
             .AddStep<RemoveHtmlScriptsStep>()
