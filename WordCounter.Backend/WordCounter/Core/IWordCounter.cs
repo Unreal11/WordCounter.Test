@@ -6,5 +6,5 @@ public interface IWordCounter
 {
     WordCounterSettings Settings { get; set; }
 
-    Task<List<WordGroupContainer>> CountWordsAsync(string text);
+    Task<List<WordGroupContainer>> CountWordsAsync(IContract contract);
 }

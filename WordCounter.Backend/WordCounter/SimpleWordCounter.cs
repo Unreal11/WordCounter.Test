@@ -23,17 +23,15 @@ public class SimpleWordCounter : IWordCounter
         _logger = logger;
     }
 
-    public async Task<List<WordGroupContainer>> CountWordsAsync(string text)
+    public async Task<List<WordGroupContainer>> CountWordsAsync(IContract contract)
     {
         var groupContainers = Settings.WordCountGroups
             .Select(x => new GroupContainer(x, new Dictionary<string, int>()))
             .ToList();
 
-        var phrases = text.ToLower().Split(CharDictionary.NewLine);
-
         await Parallel.ForEachAsync(groupContainers, async (container, token) =>
         {
-            foreach (var phrase in phrases)
+            foreach (var phrase in contract.Phrases)
             {
                 await SafeCycle.WhileAsync(
                     position => position >= 0 && position < phrase.Length,
