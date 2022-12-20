@@ -25,6 +25,9 @@ public class SimpleWordCounter : IWordCounter
 
     public async Task<List<WordGroupContainer>> CountWordsAsync(IContract contract)
     {
+        if (contract is null)
+            throw new NullReferenceException($"Parameter {nameof(contract)} cannot be null!");
+
         var groupContainers = Settings.WordCountGroups
             .Select(x => new GroupContainer(x, new Dictionary<string, int>()))
             .ToList();

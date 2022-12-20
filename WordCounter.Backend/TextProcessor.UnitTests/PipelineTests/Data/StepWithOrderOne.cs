@@ -7,7 +7,7 @@ public class StepWithOrderOneLogger : TestLogger<StepWithOrderOne>
 {
 }
 
-[TextProcessor.Attributes.Order(1)]
+[Order(1)]
 public class StepWithOrderOne : TextProcessingPipelineStep
 {
     public StepWithOrderOne(StepWithOrderOneLogger logger) : base(logger)

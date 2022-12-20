@@ -23,7 +23,8 @@ public class WordCounterSettings
     private int[] _wordCountGroup = Array.Empty<int>();
     private string[] _exceptions = Array.Empty<string>();
 
-    public static WordCounterSettings Default => new WordCounterSettings()
+    public static 
+    WordCounterSettings Default => new WordCounterSettings()
     {
         WordCountGroups = new[] { 1, 2, 3 }
     };

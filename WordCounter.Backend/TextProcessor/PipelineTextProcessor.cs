@@ -26,19 +26,19 @@ public class PipelineTextProcessor : IPipelineTextProcessor
     {
         if (Settings == null)
         {
-            _logger.LogError("Был запущен не настроенный текстовый процессор!");
+            _logger.LogError("Был запущен ненастроенный текстовый процессор!");
             return text;
         }
 
         if (Pipeline == null || !Pipeline.Any())
         {
-            _logger.LogWarning("Был запущен текстовый процессор с пусты пайплайном!");
+            _logger.LogWarning("Был запущен текстовый процессор с пустым пайплайном!");
             return text;
         }
 
         if (Settings.MaximalCharsNumber >= 0 && text.Length > Settings.MaximalCharsNumber)
         {
-            _logger.LogWarning(@$"Текст будет сокращен до {Settings.MaximalCharsNumber} симовлов.");
+            _logger.LogWarning(@$"Текст будет сокращен до {Settings.MaximalCharsNumber} символов.");
             text = text.Substring(0, Settings.MaximalCharsNumber);
         }
 
